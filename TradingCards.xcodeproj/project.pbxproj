@@ -11,6 +11,7 @@
 		8204441E2B5AB94E0016E444 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8204441D2B5AB94E0016E444 /* ContentView.swift */; };
 		820444202B5AB9500016E444 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8204441F2B5AB9500016E444 /* Assets.xcassets */; };
 		820444232B5AB9500016E444 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 820444222B5AB9500016E444 /* Preview Assets.xcassets */; };
+		8204442A2B5AB9690016E444 /* TradingCardProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820444292B5AB9690016E444 /* TradingCardProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		8204441D2B5AB94E0016E444 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8204441F2B5AB9500016E444 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		820444222B5AB9500016E444 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		820444292B5AB9690016E444 /* TradingCardProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingCardProperties.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 				8204441D2B5AB94E0016E444 /* ContentView.swift */,
 				8204441F2B5AB9500016E444 /* Assets.xcassets */,
 				820444212B5AB9500016E444 /* Preview Content */,
+				820444292B5AB9690016E444 /* TradingCardProperties.swift */,
 			);
 			path = TradingCards;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			files = (
 				8204441E2B5AB94E0016E444 /* ContentView.swift in Sources */,
 				8204441C2B5AB94E0016E444 /* TradingCardsApp.swift in Sources */,
+				8204442A2B5AB9690016E444 /* TradingCardProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
