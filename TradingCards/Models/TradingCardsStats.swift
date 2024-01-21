@@ -14,7 +14,7 @@ struct TradingCard {
     let driverTeam: String
     let teamImageName: String
     let driverImageName: String
-    let driverColor: Color
+    let colorSet: [Color]
     
     let careerPoints: Double
     let careerWins: Int
@@ -22,6 +22,7 @@ struct TradingCard {
     let careerChampionships: Int
     
     let famousRace: String
+
 }
 
 
@@ -31,12 +32,13 @@ let TradingCardHamilton = TradingCard(
     driverTeam: "Mercedes",
     teamImageName: "MercedesLogo",
     driverImageName: "hamiltonImage",
-    driverColor: .cyan,
+    colorSet: [Color.lewisHColor1, Color.lewisHColor2, Color.lewisHColor3],
     careerPoints: 4639.5,
     careerWins: 103,
     careerPodiums: 197,
     careerChampionships: 7,
     famousRace: "At the 2008 British Grand Prix, Lewis Hamilton's masterful win in challenging wet conditions at Silverstone demonstrated his exceptional skill, significantly outpacing his rivals by a minute, and solidifying his status as a Formula 1 legend."
+
 )
 
 let TradingCardVerstappen = TradingCard(
@@ -45,7 +47,7 @@ let TradingCardVerstappen = TradingCard(
     driverTeam: "Red Bull Racing",
     teamImageName: "RedBullLogo",
     driverImageName: "verstappenImage",
-    driverColor: .blue,
+    colorSet: [.cyan, .black, .green],
     careerPoints: 2586.5,
     careerWins: 54,
     careerPodiums: 98,
@@ -59,7 +61,7 @@ let TradingCardVettel = TradingCard(
     driverTeam: "Ferrari",
     teamImageName: "ferrariLogo",
     driverImageName: "leclercImage",
-    driverColor: .red,
+    colorSet: [.cyan, .black, .green],
     careerPoints: 1074,
     careerWins: 5,
     careerPodiums: 30,

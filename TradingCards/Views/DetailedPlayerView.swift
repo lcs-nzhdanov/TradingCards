@@ -12,10 +12,25 @@ struct DetailedPlayerView: View {
     
     var body: some View {
         VStack {
-            driver.driverColor
-                .ignoresSafeArea()
+            ZStack {
+                Rectangle()
+                    .fill(driver.colorSet[1])
+                    .padding(15)
+                    .aspectRatio(1, contentMode: .fit)
+                
+                Rectangle()
+                    .fill(driver.colorSet[2])
+                    .padding(30)
+                    .aspectRatio(1, contentMode: .fit)
+                
+                Rectangle()
+                    .fill(.white)
+                    .padding(45)
+                    .aspectRatio(1, contentMode: .fit)
+            }
         }
-        .navigationTitle(driver.driverName)
+        .navigationTitle("Hi")
+        .background(driver.colorSet[0])
     }
 }
 
