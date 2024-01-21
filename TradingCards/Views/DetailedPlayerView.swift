@@ -23,8 +23,8 @@ struct DetailedPlayerView: View {
                     .padding(30)
                     .aspectRatio(1, contentMode: .fit)
                 
-                Rectangle()
-                    .fill(.white)
+                Image(driver.driverImageName)
+                    .resizable()
                     .padding(45)
                     .aspectRatio(1, contentMode: .fit)
             }

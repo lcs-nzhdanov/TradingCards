@@ -31,7 +31,7 @@ let TradingCardHamilton = TradingCard(
     driverSurname: "Hamilton",
     driverTeam: "Mercedes",
     teamImageName: "MercedesLogo",
-    driverImageName: "hamiltonImage",
+    driverImageName: "lewisHLogo",
     colorSet: [Color.lewisHColor1, Color.lewisHColor2, Color.lewisHColor3],
     careerPoints: 4639.5,
     careerWins: 103,
