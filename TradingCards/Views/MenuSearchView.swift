@@ -12,17 +12,31 @@ struct MenuSearchView: View {
     private let driversDict: [String: TradingCard] = [
         "Lewis Hamilton": TradingCardHamilton,
         "Max Verstappen": TradingCardVerstappen]
-
-    @State private var searchResults: [String] = []
+    
     @State private var locationSearch = ""
     @State private var destination = ""
+    
+    var searchResults: [String] {
+        if locationSearch.isEmpty {
+            return drivers
+        } else {
+            var filteredDrivers: [String] = []
+            for driver in drivers {
+                if driver.lowercased().contains(locationSearch.lowercased()) {
+                    filteredDrivers.append(driver)
+                }
+            }
+            
+            return filteredDrivers
+        }
+    }
     
     var body: some View {
         NavigationStack {
             VStack {
                 
                 List {
-                    ForEach(drivers, id: \.self) { driverName in
+                    ForEach(searchResults, id: \.self) { driverName in
                         NavigationLink(
                             
                             destination: { DetailedDriverView(driver: driversDict[driverName]!)
@@ -36,21 +50,7 @@ struct MenuSearchView: View {
             .navigationTitle("Famous F1 Drivers")
         }
         //HOW TO MAKE SEARCH WORK
-        //ASK IN NOTION
-        .searchable(text: $locationSearch) {
-            ForEach(searchResults, id: \.self) { name in
-                NavigationLink(
-                    destination: { DetailedDriverView(driver: driversDict[name]!)
-                },
-                    label: { ListItem(driver: driversDict[name]!)
-                })
-            }
-        }
-        .onChange(of: locationSearch) { _, location in
-            searchResults = drivers.filter { name in
-                name.hasPrefix(locationSearch)
-            }
-        }
+        .searchable(text: $locationSearch)
     }
 }
 
