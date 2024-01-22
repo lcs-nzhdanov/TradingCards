@@ -25,8 +25,7 @@ struct MenuSearchView: View {
                     ForEach(drivers, id: \.self) { driverName in
                         NavigationLink(
                             
-                            destination: {
-                            DetailedDriverView(driver: driversDict[driverName]!)
+                            destination: { DetailedDriverView(driver: driversDict[driverName]!)
                         },
                            label: { ListItem(driver: driversDict[driverName]!)
                         })
@@ -36,11 +35,15 @@ struct MenuSearchView: View {
             }
             .navigationTitle("Famous F1 Drivers")
         }
+        //HOW TO MAKE SEARCH WORK
+        //ASK IN NOTION
         .searchable(text: $locationSearch) {
             ForEach(searchResults, id: \.self) { name in
-                Button(name) {
-                
-                }
+                NavigationLink(
+                    destination: { DetailedDriverView(driver: driversDict[name]!)
+                },
+                    label: { ListItem(driver: driversDict[name]!)
+                })
             }
         }
         .onChange(of: locationSearch) { _, location in
