@@ -12,6 +12,7 @@
 		820444202B5AB9500016E444 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8204441F2B5AB9500016E444 /* Assets.xcassets */; };
 		820444232B5AB9500016E444 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 820444222B5AB9500016E444 /* Preview Assets.xcassets */; };
 		8204442A2B5AB9690016E444 /* TradingCardsStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820444292B5AB9690016E444 /* TradingCardsStats.swift */; };
+		8204442F2B5DEED40016E444 /* CareerStatsElem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8204442E2B5DEED40016E444 /* CareerStatsElem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		8204441F2B5AB9500016E444 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		820444222B5AB9500016E444 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		820444292B5AB9690016E444 /* TradingCardsStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingCardsStats.swift; sourceTree = "<group>"; };
+		8204442E2B5DEED40016E444 /* CareerStatsElem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerStatsElem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 		8204441A2B5AB94E0016E444 /* TradingCards */ = {
 			isa = PBXGroup;
 			children = (
+				8204442D2B5DEE980016E444 /* Custom Structures */,
 				8204442B2B5ABBEB0016E444 /* Models */,
 				8204442C2B5ABBF70016E444 /* Views */,
 				8204441B2B5AB94E0016E444 /* TradingCardsApp.swift */,
@@ -84,6 +87,14 @@
 				8204441D2B5AB94E0016E444 /* DetailedPlayerView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8204442D2B5DEE980016E444 /* Custom Structures */ = {
+			isa = PBXGroup;
+			children = (
+				8204442E2B5DEED40016E444 /* CareerStatsElem.swift */,
+			);
+			path = "Custom Structures";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8204442F2B5DEED40016E444 /* CareerStatsElem.swift in Sources */,
 				8204441E2B5AB94E0016E444 /* DetailedPlayerView.swift in Sources */,
 				8204441C2B5AB94E0016E444 /* TradingCardsApp.swift in Sources */,
 				8204442A2B5AB9690016E444 /* TradingCardsStats.swift in Sources */,

@@ -7,12 +7,27 @@
 
 import SwiftUI
 
-struct CareerStatsView: View {
+struct CareerStatsElem: View {
+    let wantedStat: String
+    let wantedNumber: Int
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HStack {
+                Text(wantedStat)
+                //Spacer()
+            }
+            
+            HStack {
+                Text("\(wantedNumber)")
+               // Spacer()
+            }
+        }
+        .frame(minWidth: 0)
+        .padding(.horizontal, 5)
     }
 }
 
 #Preview {
-    CareerStatsView()
+    CareerStatsElem(wantedStat: "Points", wantedNumber: 1)
 }
