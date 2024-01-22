@@ -7,8 +7,10 @@
 
 import Foundation
 import SwiftUI
+import Observation
 
-struct TradingCard {
+@Observable
+class TradingCard {
     let driverName: String
     let driverSurname: String
     let driverTeam: String
@@ -22,6 +24,27 @@ struct TradingCard {
     
     let famousRace: String
     let shortDescription: String
+    var isFavourite: Bool
+    
+    let accentColor: Color
+    
+    init(driverName: String, driverSurname: String, driverTeam: String, teamImageName: String, driverImageName: String, colorSet: [Color], careerPoints: Double, careerWins: Int, careerPodiums: Int, famousRace: String, shortDescription: String, isFavourite: Bool = false, accentColor: Color = .accentColor) {
+        self.driverName = driverName
+        self.driverSurname = driverSurname
+        self.driverTeam = driverTeam
+        self.teamImageName = teamImageName
+        self.driverImageName = driverImageName
+        self.colorSet = colorSet
+        self.careerPoints = careerPoints
+        self.careerWins = careerWins
+        self.careerPodiums = careerPodiums
+        self.famousRace = famousRace
+        self.shortDescription = shortDescription
+        self.isFavourite = isFavourite
+        self.accentColor = accentColor
+    }
+    
+    
 }
 
 
@@ -37,7 +60,8 @@ let TradingCardHamilton = TradingCard(
     careerWins: 103,
     careerPodiums: 197,
     famousRace: "At the 2008 British Grand Prix, Lewis Hamilton's masterful win in challenging wet conditions at Silverstone demonstrated his exceptional skill, significantly outpacing his rivals by a minute, and solidifying his status as a Formula 1 legend.",
-    shortDescription: "Simply The Best!"
+    shortDescription: "Simply The Best!",
+    accentColor: .green
 
 )
 

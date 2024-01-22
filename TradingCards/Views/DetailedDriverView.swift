@@ -8,127 +8,162 @@
 import SwiftUI
 
 struct DetailedDriverView: View {
-    let driver: TradingCard
+    @Bindable var driver: TradingCard
     
     //HOW TO ADD A BACKGROUND INTO BOTTOM WHEN SCROLLING?
     
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack {
-                    Spacer()
+                ZStack {
                     
-                    ZStack {
-                        
-                        RoundedRectangle(cornerRadius: 15)
-                            .fill(driver.colorSet[1])
-                            .padding(15)
-                            .aspectRatio(1, contentMode: .fit)
-                        
-                        RoundedRectangle(cornerRadius: 15)
-                            .fill(driver.colorSet[2])
-                            .padding(30)
-                            .aspectRatio(1, contentMode: .fit)
-                        
-                        Image(driver.driverImageName)
-                            .resizable()
-                            .clipShape(RoundedRectangle(cornerRadius: 15))
-                            .padding(45)
-                            .aspectRatio(1, contentMode: .fit)
-                        
-                        HStack {
-                            Spacer()
-                            
-                            VStack {
-                                Spacer()
-                                
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: 50)
-                                        .frame(width: 95, height: 95)
-                                    
-                                    Image(driver.teamImageName)
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 100, height: 100)
-                                    
-                                }
-                                .padding(.bottom, 25)
-                                .padding(.trailing, 25)
-                            }
-                        }
-                    }
-
+                    Color(driver.colorSet[0])
+                        .ignoresSafeArea()
                     
                     VStack {
-                        VStack {
-                            HStack {
-                                Text("Career Stats")
-                                    .font(.title3)
-                                    .bold()
-                                
-                                Spacer()
-                            }
-                            .padding(.horizontal, 15)
-                            .padding(.vertical, 5)
+                        Spacer()
+                        
+                        ZStack {
+                            
+                            RoundedRectangle(cornerRadius: 15)
+                                .fill(driver.colorSet[1])
+                                .padding(15)
+                                .aspectRatio(1, contentMode: .fit)
+                            
+                            RoundedRectangle(cornerRadius: 15)
+                                .fill(driver.colorSet[2])
+                                .padding(30)
+                                .aspectRatio(1, contentMode: .fit)
+                            
+                            Image(driver.driverImageName)
+                                .resizable()
+                                .clipShape(RoundedRectangle(cornerRadius: 15))
+                                .padding(45)
+                                .aspectRatio(1, contentMode: .fit)
                             
                             HStack {
-                                CareerStatsElem(
-                                    wantedStat: "Wins",
-                                    wantedNumber: driver.careerWins
-                                )
-                                
-                                
-                                CareerStatsElem(
-                                    wantedStat: "Podiums",
-                                    wantedNumber: driver.careerPodiums
-                                )
+                                Spacer()
                                 
                                 VStack {
-                                    HStack {
-                                        Text("Points")
-                                        Spacer()
-                                    }
+                                    Spacer()
                                     
-                                    HStack {
-                                        Text(String(format: "%.1f", driver.careerPoints))
-                                        Spacer()
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 50)
+                                            .frame(width: 95, height: 95)
+                                        
+                                        Image(driver.teamImageName)
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 100, height: 100)
+                                        
                                     }
+                                    .padding(.bottom, 25)
+                                    .padding(.trailing, 25)
                                 }
-
-                                .padding(.horizontal, 15)
                             }
                         }
-                        .padding(.top, 5)
                         
                         
                         VStack {
-                            HStack {
-                                Text("Famous Race")
-                                    .font(.title3)
-                                    .bold()
-                                
-                                Spacer()
-                            }
-                            .padding(.horizontal, 15)
-                            .padding(.vertical, 5)
-                            
-                            Text(driver.famousRace)
+                            VStack {
+                                HStack {
+                                    Text("Career Stats")
+                                        .font(.title3)
+                                        .bold()
+                                    
+                                    Spacer()
+                                }
                                 .padding(.horizontal, 15)
+                                .padding(.vertical, 5)
+                                
+                                HStack {
+                                    CareerStatsElem(
+                                        wantedStat: "Wins",
+                                        wantedNumber: driver.careerWins
+                                    )
+                                    
+                                    
+                                    CareerStatsElem(
+                                        wantedStat: "Podiums",
+                                        wantedNumber: driver.careerPodiums
+                                    )
+                                    
+                                    VStack {
+                                        HStack {
+                                            Text("Points")
+                                            Spacer()
+                                        }
+                                        
+                                        HStack {
+                                            Text(String(format: "%.1f", driver.careerPoints))
+                                            Spacer()
+                                        }
+                                    }
+                                    
+                                    .padding(.horizontal, 15)
+                                }
+                            }
+                            .padding(.top, 5)
+                            
+                            
+                            VStack {
+                                HStack {
+                                    Text("Famous Race")
+                                        .font(.title3)
+                                        .bold()
+                                    
+                                    Spacer()
+                                }
+                                .padding(.horizontal, 15)
+                                .padding(.vertical, 5)
+                                
+                                Text(driver.famousRace)
+                                    .padding(.horizontal, 15)
+                            }
+                            .padding(.bottom, 10)
                         }
+                        .background(RoundedRectangle(cornerRadius: 15) .fill(.white))
+                        
+                        .padding(.horizontal, 5)
                         .padding(.bottom, 10)
                     }
-                    .background(RoundedRectangle(cornerRadius: 15) .fill(.white))
-                    
-                    .padding(.horizontal, 5)
-                    .padding(.bottom, 10)
+                    .ignoresSafeArea()
                 }
-                .background(driver.colorSet[0])
-                .ignoresSafeArea()
                 .navigationTitle("\(driver.driverName) \(driver.driverSurname)")
+              //  .navigationBarTitleDisplayMode(.inline)
+                
+                
+            }
+            .toolbar{
+                ToolbarItem(placement: .primaryAction) {
+                    Button {
+                        driver.isFavourite.toggle()
+                    } label: {
+                        Image(systemName: driver.isFavourite ? "heart.fill" : "heart")
+                            .tint(driver.colorSet[0])
+                    }
+                    
                 }
             }
         }
+        
     }
+    
+    
+    init(driver: TradingCard) {
+        self.driver = driver
+        UIScrollView.appearance().backgroundColor = UIColor(driver.colorSet[0])
+        
+        let coloredAppearance = UINavigationBarAppearance()
+        coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor(driver.colorSet[0])]
+        coloredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(driver.colorSet[0])]
+        UINavigationBar.appearance().standardAppearance = coloredAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
+        
+    }
+    
+    
+}
 
 #Preview {
     DetailedDriverView(driver: TradingCardHamilton)

@@ -45,11 +45,9 @@ struct MenuSearchView: View {
                         })
                     }
                 }
-                
             }
             .navigationTitle("Famous F1 Drivers")
         }
-        //HOW TO MAKE SEARCH WORK
         .searchable(text: $locationSearch)
     }
 }
