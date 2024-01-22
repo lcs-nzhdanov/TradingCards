@@ -37,7 +37,7 @@ let TradingCardHamilton = TradingCard(
     careerWins: 103,
     careerPodiums: 197,
     famousRace: "At the 2008 British Grand Prix, Lewis Hamilton's masterful win in challenging wet conditions at Silverstone demonstrated his exceptional skill, significantly outpacing his rivals by a minute, and solidifying his status as a Formula 1 legend.",
-    shortDescription: "Simply the Best!"
+    shortDescription: "Simply The Best!"
 
 )
 

@@ -12,9 +12,25 @@ struct MenuView: View {
         NavigationStack {
             VStack {
                 List {
-                    ListItem(driver: TradingCardHamilton)
+                    //Hamilton
+                    NavigationLink(destination: {
+                        DetailedPlayerView(driver: TradingCardHamilton)
+                    }, label: {
+                        ListItem(driver: TradingCardHamilton)
+                    })
                     
+                    //Verstappen
+                    NavigationLink(destination: {
+                        DetailedPlayerView(driver: TradingCardVerstappen)
+                    }, label: {
+                        ListItem(driver: TradingCardVerstappen)
+                    })
                     
+                    NavigationLink(destination: {
+                        DetailedPlayerView(driver: TradingCardLeclerc)
+                    }, label: {
+                        ListItem(driver: TradingCardLeclerc)
+                    })
                 }
             }
             .navigationTitle("Famous F1 Drivers")
