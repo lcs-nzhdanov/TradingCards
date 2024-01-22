@@ -15,16 +15,16 @@ struct CareerStatsElem: View {
         VStack {
             HStack {
                 Text(wantedStat)
-                //Spacer()
+                Spacer()
             }
             
             HStack {
                 Text("\(wantedNumber)")
-               // Spacer()
+                Spacer()
             }
         }
-        .frame(minWidth: 0)
-        .padding(.horizontal, 5)
+        .frame(maxWidth: 100)
+        .padding(.horizontal, 15)
     }
 }
 

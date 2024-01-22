@@ -46,7 +46,7 @@ let TradingCardVerstappen = TradingCard(
     driverTeam: "Red Bull Racing",
     teamImageName: "RedBullLogo",
     driverImageName: "verstappenImage",
-    colorSet: [.cyan, .black, .green],
+    colorSet: [.blue, .white, .red],
     careerPoints: 2586.5,
     careerWins: 54,
     careerPodiums: 98,
