@@ -117,12 +117,26 @@ struct DetailedPlayerView: View {
                 }
                 .background(driver.colorSet[0])
                 .ignoresSafeArea()
-                
+                .navigationTitle("\(driver.driverName) \(driver.driverSurname)")
+                .toolbar {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button(action: {}) {
+                            HStack {
+                                Image(systemName: "chevron.left")
+                                    .font(.system(size: 20))
+                                    .bold()
+                                
+                                Text("Back")
+                                    .font(.system(size: 20))
+                            }
+                        }
+                    }
+                }
             }
         }
     }
 }
 
 #Preview {
-    DetailedPlayerView(driver: TradingCardHamilton)
+    DetailedPlayerView(driver: TradingCardVerstappen)
 }
