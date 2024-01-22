@@ -8,32 +8,45 @@
 import SwiftUI
 
 struct MenuSearchView: View {
+    private let drivers = ["Lewis Hamilton", "Max Verstappen"]
+    private let driversDict: [String: TradingCard] = [
+        "Lewis Hamilton": TradingCardHamilton,
+        "Max Verstappen": TradingCardVerstappen]
+
+    @State private var searchResults: [String] = []
+    @State private var locationSearch = ""
+    @State private var destination = ""
+    
     var body: some View {
         NavigationStack {
             VStack {
+                
                 List {
-                    //Hamilton
-                    NavigationLink(destination: {
-                        DetailedDriverView(driver: TradingCardHamilton)
-                    }, label: {
-                        ListItem(driver: TradingCardHamilton)
-                    })
-                    
-                    //Verstappen
-                    NavigationLink(destination: {
-                        DetailedDriverView(driver: TradingCardVerstappen)
-                    }, label: {
-                        ListItem(driver: TradingCardVerstappen)
-                    })
-                    
-                    NavigationLink(destination: {
-                        DetailedDriverView(driver: TradingCardLeclerc)
-                    }, label: {
-                        ListItem(driver: TradingCardLeclerc)
-                    })
+                    ForEach(drivers, id: \.self) { driverName in
+                        NavigationLink(
+                            
+                            destination: {
+                            DetailedDriverView(driver: driversDict[driverName]!)
+                        },
+                           label: { ListItem(driver: driversDict[driverName]!)
+                        })
+                    }
                 }
+                
             }
             .navigationTitle("Famous F1 Drivers")
+        }
+        .searchable(text: $locationSearch) {
+            ForEach(searchResults, id: \.self) { name in
+                Button(name) {
+                
+                }
+            }
+        }
+        .onChange(of: locationSearch) { _, location in
+            searchResults = drivers.filter { name in
+                name.hasPrefix(locationSearch)
+            }
         }
     }
 }
