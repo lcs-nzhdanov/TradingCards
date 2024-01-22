@@ -7,8 +7,10 @@
 
 import SwiftUI
 
-struct DetailedPlayerView: View {
+struct DetailedDriverView: View {
     let driver: TradingCard
+    
+    //HOW TO ADD A BACKGROUND INTO BOTTOM WHEN SCROLLING?
     
     var body: some View {
         NavigationStack {
@@ -17,18 +19,20 @@ struct DetailedPlayerView: View {
                     Spacer()
                     
                     ZStack {
-                        Rectangle()
+                        
+                        RoundedRectangle(cornerRadius: 15)
                             .fill(driver.colorSet[1])
                             .padding(15)
                             .aspectRatio(1, contentMode: .fit)
                         
-                        Rectangle()
+                        RoundedRectangle(cornerRadius: 15)
                             .fill(driver.colorSet[2])
                             .padding(30)
                             .aspectRatio(1, contentMode: .fit)
                         
                         Image(driver.driverImageName)
                             .resizable()
+                            .clipShape(RoundedRectangle(cornerRadius: 15))
                             .padding(45)
                             .aspectRatio(1, contentMode: .fit)
                         
@@ -90,11 +94,11 @@ struct DetailedPlayerView: View {
                                         Spacer()
                                     }
                                 }
-                                .frame(maxWidth: 100)
-                                //HOW TO AVOID FRAME HERE?
+
                                 .padding(.horizontal, 15)
                             }
                         }
+                        .padding(.top, 5)
                         
                         
                         VStack {
@@ -111,9 +115,12 @@ struct DetailedPlayerView: View {
                             Text(driver.famousRace)
                                 .padding(.horizontal, 15)
                         }
+                        .padding(.bottom, 10)
                     }
-                    .background(.white)
+                    .background(RoundedRectangle(cornerRadius: 15) .fill(.white))
+                    
                     .padding(.horizontal, 5)
+                    .padding(.bottom, 10)
                 }
                 .background(driver.colorSet[0])
                 .ignoresSafeArea()
@@ -124,5 +131,5 @@ struct DetailedPlayerView: View {
     }
 
 #Preview {
-    DetailedPlayerView(driver: TradingCardVerstappen)
+    DetailedDriverView(driver: TradingCardHamilton)
 }

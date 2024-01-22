@@ -7,27 +7,27 @@
 
 import SwiftUI
 
-struct MenuView: View {
+struct MenuSearchView: View {
     var body: some View {
         NavigationStack {
             VStack {
                 List {
                     //Hamilton
                     NavigationLink(destination: {
-                        DetailedPlayerView(driver: TradingCardHamilton)
+                        DetailedDriverView(driver: TradingCardHamilton)
                     }, label: {
                         ListItem(driver: TradingCardHamilton)
                     })
                     
                     //Verstappen
                     NavigationLink(destination: {
-                        DetailedPlayerView(driver: TradingCardVerstappen)
+                        DetailedDriverView(driver: TradingCardVerstappen)
                     }, label: {
                         ListItem(driver: TradingCardVerstappen)
                     })
                     
                     NavigationLink(destination: {
-                        DetailedPlayerView(driver: TradingCardLeclerc)
+                        DetailedDriverView(driver: TradingCardLeclerc)
                     }, label: {
                         ListItem(driver: TradingCardLeclerc)
                     })
@@ -39,5 +39,5 @@ struct MenuView: View {
 }
 
 #Preview {
-    MenuView()
+    MenuSearchView()
 }

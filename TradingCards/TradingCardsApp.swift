@@ -11,7 +11,7 @@ import SwiftUI
 struct TradingCardsApp: App {
     var body: some Scene {
         WindowGroup {
-            DetailedPlayerView(driver: TradingCardHamilton)
+            MenuSearchView()
         }
     }
 }
