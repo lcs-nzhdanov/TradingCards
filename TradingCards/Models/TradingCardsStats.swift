@@ -26,9 +26,8 @@ class TradingCard {
     let shortDescription: String
     var isFavourite: Bool
     
-    let accentColor: Color
     
-    init(driverName: String, driverSurname: String, driverTeam: String, teamImageName: String, driverImageName: String, colorSet: [Color], careerPoints: Double, careerWins: Int, careerPodiums: Int, famousRace: String, shortDescription: String, isFavourite: Bool = false, accentColor: Color = .accentColor) {
+    init(driverName: String, driverSurname: String, driverTeam: String, teamImageName: String, driverImageName: String, colorSet: [Color], careerPoints: Double, careerWins: Int, careerPodiums: Int, famousRace: String, shortDescription: String, isFavourite: Bool = false) {
         self.driverName = driverName
         self.driverSurname = driverSurname
         self.driverTeam = driverTeam
@@ -41,7 +40,6 @@ class TradingCard {
         self.famousRace = famousRace
         self.shortDescription = shortDescription
         self.isFavourite = isFavourite
-        self.accentColor = accentColor
     }
     
     
@@ -55,14 +53,11 @@ let TradingCardHamilton = TradingCard(
     teamImageName: "mercedesLogo",
     driverImageName: "lewisHLogo",
     colorSet: [Color.lewisHColor1, Color.lewisHColor2, Color.lewisHColor3],
-    
     careerPoints: 4639.5,
     careerWins: 103,
     careerPodiums: 197,
     famousRace: "At the 2008 British Grand Prix, Lewis Hamilton's masterful win in challenging wet conditions at Silverstone demonstrated his exceptional skill, significantly outpacing his rivals by a minute, and solidifying his status as a Formula 1 legend.",
-    shortDescription: "Simply The Best!",
-    accentColor: .green
-
+    shortDescription: "Simply The Best!"
 )
 
 let TradingCardVerstappen = TradingCard(
@@ -84,11 +79,11 @@ let TradingCardLeclerc = TradingCard(
     driverSurname: "Leclerc",
     driverTeam: "Ferrari",
     teamImageName: "ferrariLogo",
-    driverImageName: "leclercImage",
-    colorSet: [.cyan, .black, .green],
+    driverImageName: "leclercLogo",
+    colorSet: [.ferrariRed, .ferrariYellow, .white],
     careerPoints: 1074,
     careerWins: 5,
     careerPodiums: 30,
     famousRace: "In the 2019 Italian Grand Prix at Monza, Charles Leclerc showcased remarkable talent and tenacity. Defending fiercely against Mercedes, he secured an iconic victory for Ferrari at their home race. This triumph emphatically established Leclerc as a formidable contender in Formula 1's new era.",
-    shortDescription: ""
+    shortDescription: "The Monegasque"
 )

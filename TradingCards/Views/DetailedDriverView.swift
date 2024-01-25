@@ -15,12 +15,21 @@ struct DetailedDriverView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
+                
                 ZStack {
                     
                     Color(driver.colorSet[0])
                         .ignoresSafeArea()
                     
                     VStack {
+                        Text("\(driver.driverName) \(driver.driverSurname)")
+                            .font(.custom("Formula1", size: 36))
+                            .foregroundStyle(.white)
+                            .padding(.top, 30)
+                            
+                           // .bold()
+                        
+                        
                         Spacer()
                         
                         ZStack {
@@ -48,13 +57,14 @@ struct DetailedDriverView: View {
                                     Spacer()
                                     
                                     ZStack {
-                                        RoundedRectangle(cornerRadius: 50)
-                                            .frame(width: 95, height: 95)
+                                        //RoundedRectangle(cornerRadius: 50)
+                                         //   .frame(width: 95, height: 95)
                                         
                                         Image(driver.teamImageName)
                                             .resizable()
                                             .scaledToFit()
                                             .frame(width: 100, height: 100)
+                                            .shadow(radius: 3)
                                         
                                     }
                                     .padding(.bottom, 25)
@@ -120,7 +130,7 @@ struct DetailedDriverView: View {
                                 Text(driver.famousRace)
                                     .padding(.horizontal, 15)
                             }
-                            .padding(.bottom, 10)
+                            .padding(.vertical, 10)
                         }
                         .background(RoundedRectangle(cornerRadius: 15) .fill(.white))
                         
@@ -129,11 +139,12 @@ struct DetailedDriverView: View {
                     }
                     .ignoresSafeArea()
                 }
-                .navigationTitle("\(driver.driverName) \(driver.driverSurname)")
-              //  .navigationBarTitleDisplayMode(.inline)
+              //  .navigationTitle("\(driver.driverName) //\(driver.driverSurname)")
+              .navigationBarTitleDisplayMode(.inline)
                 
                 
             }
+            .ignoresSafeArea(edges: .bottom)
             .toolbar{
                 ToolbarItem(placement: .primaryAction) {
                     Button {
@@ -144,6 +155,14 @@ struct DetailedDriverView: View {
                     }
                     
                 }
+                
+                ToolbarItem(placement: .principal) {
+                    Text("\(driver.driverName) \(driver.driverSurname)")
+                      //  .font(.custom("Formula1 Display Regular"))
+                        .font(.system(size: 25))
+                        .foregroundStyle(driver.colorSet[0])
+                        .bold()
+                }
             }
         }
         
@@ -152,19 +171,19 @@ struct DetailedDriverView: View {
     
     init(driver: TradingCard) {
         self.driver = driver
-        UIScrollView.appearance().backgroundColor = UIColor(driver.colorSet[0])
-        
-        let coloredAppearance = UINavigationBarAppearance()
-        coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor(driver.colorSet[0])]
-        coloredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(driver.colorSet[0])]
-        UINavigationBar.appearance().standardAppearance = coloredAppearance
-        UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
-        
+//        UIScrollView.appearance().backgroundColor = UIColor(driver.colorSet[0])
+//        
+//        let coloredAppearance = UINavigationBarAppearance()
+//        coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor(driver.colorSet[0])]
+//        coloredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(driver.colorSet[0])]
+//        UINavigationBar.appearance().standardAppearance = coloredAppearance
+//        UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
+//        
     }
     
     
 }
 
 #Preview {
-    DetailedDriverView(driver: TradingCardHamilton)
+    DetailedDriverView(driver: TradingCardVerstappen)
 }

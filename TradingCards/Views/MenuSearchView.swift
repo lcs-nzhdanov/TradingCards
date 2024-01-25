@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct MenuSearchView: View {
-    private let drivers = ["Lewis Hamilton", "Max Verstappen"]
+    private let drivers = ["Lewis Hamilton", "Max Verstappen", "Charles Leclerc"]
     private let driversDict: [String: TradingCard] = [
         "Lewis Hamilton": TradingCardHamilton,
-        "Max Verstappen": TradingCardVerstappen]
+        "Max Verstappen": TradingCardVerstappen,
+        "Charles Leclerc": TradingCardLeclerc]
     
     @State private var locationSearch = ""
     @State private var destination = ""

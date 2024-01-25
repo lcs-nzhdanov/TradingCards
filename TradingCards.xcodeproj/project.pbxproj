@@ -15,6 +15,7 @@
 		8204442F2B5DEED40016E444 /* CareerStatsElem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8204442E2B5DEED40016E444 /* CareerStatsElem.swift */; };
 		829BA1C32B5E054B003BE2BD /* MenuSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829BA1C22B5E054B003BE2BD /* MenuSearchView.swift */; };
 		829BA1C52B5E092F003BE2BD /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829BA1C42B5E092F003BE2BD /* ListItem.swift */; };
+		829BA1CD2B61F3AD003BE2BD /* Formula1.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 829BA1CC2B61F3AC003BE2BD /* Formula1.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,8 @@
 		8204442E2B5DEED40016E444 /* CareerStatsElem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerStatsElem.swift; sourceTree = "<group>"; };
 		829BA1C22B5E054B003BE2BD /* MenuSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSearchView.swift; sourceTree = "<group>"; };
 		829BA1C42B5E092F003BE2BD /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		829BA1C92B61F1C5003BE2BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		829BA1CC2B61F3AC003BE2BD /* Formula1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Formula1.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +62,8 @@
 		8204441A2B5AB94E0016E444 /* TradingCards */ = {
 			isa = PBXGroup;
 			children = (
+				829BA1C92B61F1C5003BE2BD /* Info.plist */,
+				829BA1CC2B61F3AC003BE2BD /* Formula1.ttf */,
 				8204442D2B5DEE980016E444 /* Custom Structures */,
 				8204442B2B5ABBEB0016E444 /* Models */,
 				8204442C2B5ABBF70016E444 /* Views */,
@@ -162,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				820444232B5AB9500016E444 /* Preview Assets.xcassets in Resources */,
+				829BA1CD2B61F3AD003BE2BD /* Formula1.ttf in Resources */,
 				820444202B5AB9500016E444 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,6 +321,7 @@
 				DEVELOPMENT_TEAM = PC9NR2PZYX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TradingCards/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -344,6 +351,7 @@
 				DEVELOPMENT_TEAM = PC9NR2PZYX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TradingCards/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
