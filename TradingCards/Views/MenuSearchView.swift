@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MenuSearchView: View {
     private let drivers = ["Lewis Hamilton", "Max Verstappen", "Charles Leclerc"]
+    
     private let driversDict: [String: TradingCard] = [
         "Lewis Hamilton": TradingCardHamilton,
         "Max Verstappen": TradingCardVerstappen,
@@ -16,6 +17,8 @@ struct MenuSearchView: View {
     
     @State private var locationSearch = ""
     @State private var destination = ""
+    
+    //private let driverList = [TradingCardHamilton, TradingCardVerstappen, TradingCardLeclerc]
     
     var searchResults: [String] {
         if locationSearch.isEmpty {
@@ -46,6 +49,14 @@ struct MenuSearchView: View {
                         })
                     }
                 }
+                
+                /*List(driverList) { driverInList in
+                    NavigationLink(
+                        destination: {DetailedDriverView(driver: driverInList)
+                        },
+                        label: {ListItem(driver: driverInList)
+                        })
+                }*/
             }
             .navigationTitle("Famous F1 Drivers")
         }

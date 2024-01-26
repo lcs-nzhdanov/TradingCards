@@ -10,7 +10,9 @@ import SwiftUI
 import Observation
 
 @Observable
-class TradingCard {
+class TradingCard: Identifiable {
+    let id = UUID()
+    
     let driverName: String
     let driverSurname: String
     let driverTeam: String
